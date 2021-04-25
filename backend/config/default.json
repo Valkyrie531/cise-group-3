@@ -1,4 +1,4 @@
 {
     "mongoURI":
-      "mongodb+srv://Annie:secrets.MONGODB@articles.rk7je.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      "secrets.MONGODB"
   }
