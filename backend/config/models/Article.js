@@ -11,10 +11,10 @@ const ArticleSchema = new mongoose.Schema({
         type: String
     },
     year: {
-
+        type: Number
     },
     month: {
-
+        type: Number
     },
     volume: {
 
@@ -38,7 +38,7 @@ const ArticleSchema = new mongoose.Schema({
 
     },
     publisher: {
-        
+        type: String;
     }
 });
 

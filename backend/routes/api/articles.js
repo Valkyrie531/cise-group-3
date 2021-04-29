@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-// Load Book model
+// Load article model
 const Article = require('../../models/Article');
 
-// @route GET api/books/test
-// @description tests books route
+// @route GET api/article/test
+// @description tests article route
 // @access Public
 router.get('/test', (req, res) => res.send('article route testing!'));
 
-// @route GET api/books
-// @description Get all books
+// @route GET api/article
+// @description Get all article
 // @access Public
 router.get('/', (req, res) => {
   Article.find()
@@ -18,8 +18,8 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ noarticlesfound: 'No Articles found' }));
 });
 
-// @route GET api/books/:id
-// @description Get single book by id
+// @route GET api/article/:id
+// @description Get single article by id
 // @access Public
 router.get('/:id', (req, res) => {
   Article.findById(req.params.id)
@@ -27,8 +27,8 @@ router.get('/:id', (req, res) => {
     .catch(err => res.status(404).json({ noarticlefound: 'No Article found' }));
 });
 
-// @route GET api/books
-// @description add/save book
+// @route GET api/article
+// @description add/save article
 // @access Public
 router.post('/', (req, res) => {
   Article.create(req.body)
@@ -36,8 +36,8 @@ router.post('/', (req, res) => {
     .catch(err => res.status(400).json({ error: 'Unable to add this article' }));
 });
 
-// @route GET api/books/:id
-// @description Update book
+// @route GET api/article/:id
+// @description Update article
 // @access Public
 router.put('/:id', (req, res) => {
   Article.findByIdAndUpdate(req.params.id, req.body)
@@ -47,8 +47,8 @@ router.put('/:id', (req, res) => {
     );
 });
 
-// @route GET api/books/:id
-// @description Delete book by id
+// @route GET api/article/:id
+// @description Delete article by id
 // @access Public
 router.delete('/:id', (req, res) => {
   Article.findByIdAndRemove(req.params.id, req.body)
