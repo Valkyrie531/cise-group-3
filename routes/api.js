@@ -4,9 +4,7 @@ const router = express.Router();
 
 const Article = require('../models/Article');
 
-router.get('/', (req, res) => {
-    
-});
+
 
 router.get('/test', (req, res) => {
     const data = {
