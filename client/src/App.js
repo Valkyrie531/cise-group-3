@@ -5,6 +5,7 @@ class App extends React.Component {
   
   state = {
     title: '',
+    author: '',
     entries: []
   }
 
@@ -27,11 +28,13 @@ class App extends React.Component {
   displayEntries = (entries) => {
     if (!entries.length) return null;
 
-    entries.map((entry, index) => {
+    return entries.map((entry, index) => (
       <div key={index}>
-        <h3>{entries.title}</h3>
+        <h3>{entry.title}</h3>
+        <p>Author: {entry.author}</p>
+        <p>Journal: {entry.journal}</p>
       </div>
-    });
+    ));
   };
 
   render() {
