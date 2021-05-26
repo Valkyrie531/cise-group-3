@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   getArticle = () => {
-    axios.get('/test')
+    axios.get('/api')
       .then((response) => {
         const data = response.data;
         this.setState({entries: data});

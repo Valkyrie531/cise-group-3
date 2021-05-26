@@ -8,9 +8,7 @@ const PORT = process.env.PORT || 8080;
 
 const routes = require('./routes/api');
 
-const MONGODB_URI = 'the link';
-
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -26,5 +24,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(morgan('tiny'));
 
 app.use('/', routes);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));

@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Article = require('../models/Article');
 
-router.get('/api', (req, res) => {
+router.get('/test', (req, res) => {
     const data = {
         username: 'hi',
         age: 5
@@ -12,14 +12,14 @@ router.get('/api', (req, res) => {
     res.json(data);
 });
 
-router.get('/test', (req, res) => {
+router.get('/api', (req, res) => {
     Article.find({  })
         .then((data) => {
             console.log('Data: ', data);
             res.json(data);
         })
         .catch((error) => {
-            console.log('error: ', daerrorta);
+            console.log('error: ', error);
         });
 });
 
